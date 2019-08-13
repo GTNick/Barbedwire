@@ -33,5 +33,6 @@ class Main extends PluginBase implements Listener{
                     }else{
                    
                     $player->removeEffect(getEffect(EFFECT::WITHER));
+                    }
           }
 }
