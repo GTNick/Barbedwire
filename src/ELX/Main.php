@@ -6,7 +6,6 @@ namespace ELX\Main;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\PlayerMoveEvent;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\Level;
@@ -27,7 +26,8 @@ class Main extends PluginBase implements Listener{
                     $this->getServer()->getPluginManager()->registerEvents($this,$this); 
                     $this->getLogger()->info("Plugin Enabled");
           }
-          public function onPlayerEventMove(){
+          public function onMove(PlayerMoveEvent $event){
+                    $player = $event->getPlayer();
                     if($player->getLevel()->getBlock($player->asVector3())->getId() == BLOCK::COB_WEB){
                     $player->addEffect(new EffectInstance(Effect::getEffect(EFFECT::WITHER), 20 * 2));
                     }else{
