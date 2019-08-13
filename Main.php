@@ -1,5 +1,9 @@
-<?php
+<?php  
+
+declare(strict_types=1);
+
 namespace ELX\Main;
+
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\PlayerMoveEvent;
@@ -10,7 +14,8 @@ use pocketmine\entity\EntityEffect;
 use pocketmine\entity\EntityEventInstance;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\entity\Living;
-class Barbedwire extends PluginBase implements Listener{
+
+class Main extends PluginBase implements Listener{
           public function onLoad(){
                     $this->getLogger()->info("Plugin Loading");
           }
@@ -19,7 +24,7 @@ class Barbedwire extends PluginBase implements Listener{
           }
           
           public function onEnable(){
-                    $this->getServer()->getPluginManager()->registerEvents($this,$this); // THIS LINE
+                    $this->getServer()->getPluginManager()->registerEvents($this,$this); 
                     $this->getLogger()->info("Plugin Enabled");
           }
           public function onPlayerEventMove(){
