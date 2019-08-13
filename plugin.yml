@@ -1,0 +1,6 @@
+name: Barbedwire
+version: 1.0.0
+author: Elxctronick
+description: makes cobwebs act as barbedwire
+api: 3.1.0
+main: ELX\Main
